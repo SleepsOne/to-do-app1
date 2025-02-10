@@ -1,0 +1,21 @@
+### GET / 
+GET http://localhost:5004/
+
+### POST /auth/register
+
+POST http://localhost:5004/auth/register
+Content-Type: application/json
+
+{
+    "username": "test-user1",
+    "password": "12321"
+}
+### POST auth/login
+POST http://localhost:5004/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+###
