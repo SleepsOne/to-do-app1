@@ -7,7 +7,7 @@ POST http://localhost:5004/auth/register
 Content-Type: application/json
 
 {
-    "username": "test-user1",
+    "username": "test",
     "password": "12321"
 }
 ### POST auth/login
@@ -15,7 +15,7 @@ POST http://localhost:5004/auth/login
 Content-Type: application/json
 
 {
-    "username": "admin",
-    "password": "admin"
+    "username": "test",
+    "password": "12321"
 }
-###
+### 

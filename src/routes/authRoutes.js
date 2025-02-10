@@ -35,7 +35,33 @@ router.post("/register", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-  console.log(req.body);
+  const { username, password } = req.body;
+
+  try {
+    const getUser = db.prepare(`SELECT * from users WHERE username = ? `);
+    const user = getUser.get(username);
+
+    if (!user) {
+      return res.status(404).send({
+        message: "User not found",
+      });
+    }
+
+    const passwordIsValid = bcrypt.compareSync(password, user.password);
+    if (!passwordIsValid) {
+      return res.status(401).send({
+        message: "Invalid password",
+      });
+    }
+    console.log(user);
+    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
+      expiresIn: "24h",
+    });
+    res.json({ token });
+  } catch (error) {
+    console.log(error.message);
+    res.status(503);
+  }
 });
 
 export default router;
