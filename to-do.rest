@@ -1,21 +1,44 @@
 ### GET / 
-GET http://localhost:5004/
+GET http://localhost:5003/
 
 ### POST /auth/register
 
-POST http://localhost:5004/auth/register
+POST http://localhost:5003/auth/register
 Content-Type: application/json
 
 {
-    "username": "test",
+    "username": "test1",
     "password": "12321"
 }
 ### POST auth/login
-POST http://localhost:5004/auth/login
+POST http://localhost:5003/auth/login
 Content-Type: application/json
 
 {
-    "username": "test",
+    "username": "test1",
     "password": "12321"
 }
-### 
+### GET todos/
+GET http://localhost:5003/todos/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM5MTk5NTUxLCJleHAiOjE3MzkyODU5NTF9.zBlGSIPDQtDKI42I8SeI5WUwMFFK65tk6KxDzR3XH3c
+### POST todos/
+POST http://localhost:5003/todos/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM5MTk5NTUxLCJleHAiOjE3MzkyODU5NTF9.zBlGSIPDQtDKI42I8SeI5WUwMFFK65tk6KxDzR3XH3c
+Content-Type: application/json
+
+{
+    "task": "added new task!"
+}
+
+### PUT todos/:id
+PUT http://localhost:5003/todos/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM5MTk2OTg1LCJleHAiOjE3MzkyODMzODV9.7kisVMdJQ6zZHrRYw7xirRdUoCmDPZLZg6fwG9K7ELE
+Content-Type: application/json
+
+{
+    "completed": 1
+}
+
+### DELETE todos/:id
+DELETE http://localhost:5003/todos/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM5MTk2OTg1LCJleHAiOjE3MzkyODMzODV9.7kisVMdJQ6zZHrRYw7xirRdUoCmDPZLZg6fwG9K7ELE
