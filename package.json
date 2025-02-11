@@ -10,10 +10,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "A full stack todo application that uses a NodeJS backend, a SQLite database and JWT Authentication.",
+  "description": "A dockerized full stack todo application that uses a NodeJS backend,a aPrisma ORM,a PostgreSQL database and JWT Authentication.",
   "dependencies": {
+    "@prisma/client": "^6.3.1",
     "bcryptjs": "^2.4.3",
     "express": "^4.21.2",
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.1",
+    "prisma": "^6.3.1"
   }
 }
